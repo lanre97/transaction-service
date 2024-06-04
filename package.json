@@ -22,6 +22,7 @@
     "start:migrate:prod": "ls -l dist && yarn prisma migrate deploy && yarn seed && yarn start:prod"
   },
   "dependencies": {
+    "@apollo/server": "^4.10.4",
     "@nestjs/apollo": "^12.1.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.2",

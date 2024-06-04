@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { TransactionsController } from '../controllers/transactions.controller';
+import { TransactionsResolver } from '../resolvers/transactions.resolver';
 import { TransactionsConsumer } from '../consumers/transactions.consumer';
 import { ApproveTransactionAdapter } from 'src/infraestructure/adapters/approve-transaction.adapter';
 import { RejectTransactionAdapter } from 'src/infraestructure/adapters/reject-transaction.adapter';
@@ -82,7 +82,8 @@ import { join } from 'path';
           kafkaEventPublisherService,
         ),
     },
+    TransactionsResolver,
   ],
-  controllers: [TransactionsController, TransactionsConsumer],
+  controllers: [TransactionsConsumer],
 })
 export class TransactionsModule {}

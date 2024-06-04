@@ -33,6 +33,6 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const port = configService.get('PORT') || 3000;
   await app.listen(port);
-  console.log(`🚀 Transaction service is running on: ${app.getUrl()}`);
+  console.log(`🚀 Transaction service is running on: ${await app.getUrl()}`);
 }
 bootstrap();
